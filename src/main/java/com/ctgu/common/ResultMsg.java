@@ -2,6 +2,12 @@ package com.ctgu.common;
 
 import java.io.Serializable;
 
+/**
+ * @ClassName: ResultMsg
+ * @Description:
+ * @author lh2
+ * @date 2020年6月16日 下午6:09:44
+ */
 public class ResultMsg implements Serializable
 {
 	private static final long serialVersionUID = 7434088173776840432L;
@@ -80,8 +86,8 @@ public class ResultMsg implements Serializable
 		resultMsg.setData(data);
 		return resultMsg;
 	}
-	
-	public static ResultMsg success(Object data,ResultCode resultCode)
+
+	public static ResultMsg success(Object data, ResultCode resultCode)
 	{
 		ResultMsg resultMsg = new ResultMsg();
 		resultMsg.setCode(resultCode.getCode());

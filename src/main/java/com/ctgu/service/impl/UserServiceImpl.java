@@ -20,9 +20,14 @@ public class UserServiceImpl implements IUserService
 	}
 
 	@Override
-	public void addUser(User user)
+	public boolean addUser(User user)
 	{
-		userMapper.insert(user);
+		Integer flag = userMapper.insert(user);
+		if (flag != null)
+		{
+			return true;
+		}
+		return false;
 	}
 
 	@Override

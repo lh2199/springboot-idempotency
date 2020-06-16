@@ -6,7 +6,7 @@ public interface IUserService
 {
 	User getUserInfoById(Integer id);
 
-	void addUser(User user);
+	boolean addUser(User user);
 
 	void updateUser(User user);
 
