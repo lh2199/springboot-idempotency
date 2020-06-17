@@ -37,20 +37,11 @@ public class UserController
 	@Resource(name = "userService")
 	private IUserService userService;
 
-	// 获取单个用户的信息
-
-	@PostMapping(value = "/getUserInfoById.do")
-	@ApiOperation(value = "获取单个用户的信息  ", notes = " ")
-	public ResultMsg getUserInfoById(@RequestHeader("token") String token, @RequestBody UserInputVO input)
-	{
-
-		return null;
-	}
-
+	// 在请求接口时，要带上token
 	@ApiIdempotent
 	@GetMapping("/test-idempotent")
 	@ApiOperation(value = "测试接口  ", notes = " ")
-	public ResultMsg testIdempotent()
+	public ResultMsg testIdempotent(@RequestHeader("token") String token)
 	{
 		User user = new User();
 		user.setPassword("123");

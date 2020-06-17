@@ -35,7 +35,7 @@ public class TokenServiceImpl implements TokenService
 	@Override
 	public void checkToken(HttpServletRequest request)
 	{
-		String token = request.getHeader("token_");
+		String token = request.getHeader("token");
 		if (StringUtils.isEmpty(token))
 		{
 			// 请求头未携带token，需要抛异常
